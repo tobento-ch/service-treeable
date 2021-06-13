@@ -1,0 +1,44 @@
+{
+    "name": "tobento/service-treeable",
+    "type": "library",
+    "description": "Building trees easily",
+    "keywords": [
+        "tobento",
+        "package",
+        "tree"
+    ],
+    "homepage": "https://www.tobento.ch",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Strub",
+            "email": "info@tobento.ch",
+            "homepage": "https://www.tobento.ch"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.0",
+        "phpstan/phpstan": "^0.12.89"
+    },    
+    "autoload": {
+        "psr-4": {
+            "Tobento\\Service\\Treeable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tobento\\Service\\Treeable\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --testdox --colors=always",
+        "phpstan": "phpstan analyse --level max src/",
+        "psalm": "vendor/bin/psalm"
+    }
+}
