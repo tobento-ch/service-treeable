@@ -1,7 +1,7 @@
 {
     "name": "tobento/service-treeable",
     "type": "library",
-    "description": "Building trees easily",
+    "description": "Building trees easily.",
     "keywords": [
         "tobento",
         "package",
