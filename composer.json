@@ -5,7 +5,8 @@
     "keywords": [
         "tobento",
         "package",
-        "tree"
+        "tree",
+        "array tree"
     ],
     "homepage": "https://www.tobento.ch",
     "license": "MIT",
