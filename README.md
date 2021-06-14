@@ -355,7 +355,6 @@ $tree = new Tree([
     new Item('BMW', 'cars'),
 ]);
 
-// change the children key if needed.
 $html = (new Traverser($tree->create()))
     ->before(function($level) {
         return '<ul>';
