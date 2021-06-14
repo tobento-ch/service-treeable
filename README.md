@@ -45,7 +45,7 @@ $items = [
         'name' => 'cars',
     ],
     [
-        'name' => 'BMW',
+        'name' => 'VW',
         'parent' => 'cars',
     ],        
 ];
