@@ -35,7 +35,7 @@ interface Treeable
     /**
      * Set the tree parent item
      *
-     * @param Treeable
+     * @param Treeable $item
      * @return void
      */
     public function setTreeParentItem(Treeable $item): void;
@@ -50,7 +50,7 @@ interface Treeable
     /**
      * Sets the tree level depth.
      *
-     * @param int
+     * @param int $treeLevel
      * @return void
      */
     public function setTreeLevel(int $treeLevel): void;
@@ -65,7 +65,7 @@ interface Treeable
     /**
      * Sets the tree children
      *
-     * @param array
+     * @param array $children
      * @return void
      */
     public function setTreeChildren(array $children): void;

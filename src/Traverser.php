@@ -36,8 +36,8 @@ class Traverser
     /**
      * Create a new Traverser.
      *
-     * @param array The items to traverse.
-     * @param string The children key.
+     * @param array $items The items to traverse.
+     * @param string $children The children key.
      */    
     public function __construct(
         protected array $items,
@@ -47,7 +47,7 @@ class Traverser
     /**
      * Set the item handler.
      *
-     * @param callable function(array|object $item, int $level): string { }
+     * @param callable $callback function(array|object $item, int $level): string { }
      * @return static $this
      */    
     public function item(callable $callback): static
@@ -59,7 +59,7 @@ class Traverser
     /**
      * Set the before handler.
      *
-     * @param callable function(int $level): string { }
+     * @param callable $callback function(int $level): string { }
      * @return static $this
      */    
     public function before(callable $callback): static
@@ -71,7 +71,7 @@ class Traverser
     /**
      * Set the after handler.
      *
-     * @param callable function(int $level): string { }
+     * @param callable $callback function(int $level): string { }
      * @return static $this
      */    
     public function after(callable $callback): static
@@ -91,7 +91,7 @@ class Traverser
             return '';    
         }
         
-        $traverse = function($items, int $level) use (&$traverse) {
+        $traverse = function(array $items, int $level) use (&$traverse): string {
     
             $html = '';
             
