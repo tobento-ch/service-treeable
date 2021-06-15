@@ -26,12 +26,12 @@ class ArrayTree
     /**
      * Create a new ArrayTree
      *
-     * @param array The items.
-     * @param string The id name.
-     * @param string The parent name.
-     * @param string The level name.
-     * @param string The children name.
-     * @param string The parent item name.     
+     * @param array $items The items.
+     * @param string $id The id name.
+     * @param string $parent The parent name.
+     * @param string $level The level name.
+     * @param string $children The children name.
+     * @param string $parentItem The parent item name.     
      */    
     public function __construct(
         protected array $items,
@@ -45,7 +45,7 @@ class ArrayTree
     /**
      * Sorts the items.
      *
-     * @param callable|string
+     * @param callable|string $callback
      * @return ArrayTree
      */    
     public function sort(callable|string $callback): ArrayTree
@@ -61,7 +61,7 @@ class ArrayTree
     /**
      * Filter the items.
      * 
-     * @param callable
+     * @param callable $callable
      * @return ArrayTree
      */
     public function filter(callable $callable): ArrayTree
@@ -73,8 +73,8 @@ class ArrayTree
     /**
      * Filter the parents items.
      * 
-     * @param string|int
-     * @param callable
+     * @param string|int $id
+     * @param callable $callable
      * @return ArrayTree
      */
     public function parents(null|string|int $id, callable $callable): ArrayTree
@@ -104,7 +104,7 @@ class ArrayTree
     /**
      * Iterate over each items.
      * 
-     * @param callable function(array $item, int $level): ?array {}
+     * @param callable $callable function(array $item, int $level): ?array {}
      * @return ArrayTree
      */
     public function each(callable $callable): ArrayTree
@@ -126,9 +126,9 @@ class ArrayTree
     /**
      * Build the tree.
      * 
-     * @param array The items.
-     * @param null|array The parent item
-     * @param int The level depth.
+     * @param array $items The items.
+     * @param null|array $parentItem The parent item
+     * @param int $level The level depth.
      * @return array The build tree
      */
     protected function buildTree(array $items, ?array $parentItem = null, int $level = 0): array

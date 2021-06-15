@@ -26,7 +26,7 @@ class Tree
     /**
      * Create a new Tree from treeables.
      *
-     * @param array The items.
+     * @param array $items The items.
      */    
     public function __construct(
         protected array $items
@@ -35,7 +35,7 @@ class Tree
     /**
      * Sorts the items.
      *
-     * @param callable
+     * @param callable $callback
      * @return Tree
      */    
     public function sort(callable $callback): Tree
@@ -47,7 +47,7 @@ class Tree
     /**
      * Filter the items.
      * 
-     * @param callable
+     * @param callable $callable
      * @return Tree
      */
     public function filter(callable $callable): Tree
@@ -59,8 +59,8 @@ class Tree
     /**
      * Filter the parents items.
      * 
-     * @param string|int
-     * @param callable
+     * @param string|int $id
+     * @param callable $callable
      * @return Tree
      */
     public function parents(string|int $id, callable $callable): Tree
@@ -90,7 +90,7 @@ class Tree
     /**
      * Iterate over each items.
      * 
-     * @param callable function(Treeable $treeable, int $level): ?Treeable {}
+     * @param callable $callable function(Treeable $treeable, int $level): ?Treeable {}
      * @return Tree
      */
     public function each(callable $callable): Tree
@@ -112,9 +112,9 @@ class Tree
     /**
      * Build the tree.
      * 
-     * @param array The items.
-     * @param null|Treeable The parent value
-     * @param int The level depth.
+     * @param array $items The items.
+     * @param null|Treeable $parentItem The parent value
+     * @param int $level The level depth.
      * @return array The build tree
      */
     protected function buildTree(array $items, ?Treeable $parentItem = null, int $level = 0): array
