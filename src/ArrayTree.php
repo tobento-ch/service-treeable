@@ -51,7 +51,7 @@ class ArrayTree
     public function sort(callable|string $callback): ArrayTree
     {
         if (is_string($callback)) {    
-            $callback = fn ($a, $b) => ($a[$callback] ?? null) <=> ($b[$callback] ?? null);
+            $callback = fn (array $a, array $b): int => ($a[$callback] ?? null) <=> ($b[$callback] ?? null);
         }
 
         uasort($this->items, $callback);

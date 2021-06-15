@@ -91,7 +91,7 @@ class Traverser
             return '';    
         }
         
-        $traverse = function($items, int $level) use (&$traverse) {
+        $traverse = function(array $items, int $level) use (&$traverse): string {
     
             $html = '';
             
